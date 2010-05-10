@@ -20,10 +20,8 @@
 	<Configurations>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory="$(SolutionDir)$(PlatformName)\$(ConfigurationName)\"
-			IntermediateDirectory="$(SolutionDir)$(PlatformName)\$(ConfigurationName)\$(ProjectName)\"
 			ConfigurationType="1"
-			InheritedPropertySheets=""
+			InheritedPropertySheets="..\common_settings.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -58,11 +56,6 @@
 				StringPooling="true"
 				RuntimeLibrary="0"
 				EnableFunctionLevelLinking="true"
-				PrecompiledHeaderFile=".\Release/puttygen.pch"
-				AssemblerListingLocation=".\Release/"
-				ObjectFile=".\Release/"
-				ProgramDataBaseFileName=".\Release/"
-				WarningLevel="3"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -79,11 +72,8 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="comctl32.lib imm32.lib winmm.lib"
-				OutputFile="$(OutDir)"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
-				ProgramDatabaseFile=".\Release/puttygen.pdb"
-				SubSystem="2"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
 				TargetMachine="1"
@@ -100,7 +90,7 @@
 			<Tool
 				Name="VCBscMakeTool"
 				SuppressStartupBanner="true"
-				OutputFile=".\Release/puttygen.bsc"
+				OutputFile="$(IntDir)$(ProjectName).bsc"
 			/>
 			<Tool
 				Name="VCFxCopTool"
@@ -114,10 +104,8 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory="$(SolutionDir)$(PlatformName)\$(ConfigurationName)\"
-			IntermediateDirectory="$(SolutionDir)$(PlatformName)\$(ConfigurationName)\$(ProjectName)\"
 			ConfigurationType="1"
-			InheritedPropertySheets=""
+			InheritedPropertySheets="..\common_settings.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -151,11 +139,6 @@
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="1"
-				PrecompiledHeaderFile="$(IntDir)puttygen.pch"
-				AssemblerListingLocation="$(IntDir)"
-				ObjectFile="$(IntDir)"
-				ProgramDataBaseFileName="$(IntDir)"
-				WarningLevel="3"
 				SuppressStartupBanner="true"
 				DebugInformationFormat="4"
 			/>
@@ -173,12 +156,9 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="comctl32.lib imm32.lib winmm.lib"
-				OutputFile="$(OutDir)\puttygen.exe"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="$(OutDir)puttygen.pdb"
-				SubSystem="2"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
 				TargetMachine="1"
@@ -195,7 +175,7 @@
 			<Tool
 				Name="VCBscMakeTool"
 				SuppressStartupBanner="true"
-				OutputFile="$(IntDir)puttygen.bsc"
+				OutputFile="$(IntDir)$(ProjectName).bsc"
 			/>
 			<Tool
 				Name="VCFxCopTool"
@@ -209,10 +189,8 @@
 		</Configuration>
 		<Configuration
 			Name="Release|x64"
-			OutputDirectory="$(SolutionDir)$(PlatformName)\$(ConfigurationName)\"
-			IntermediateDirectory="$(SolutionDir)$(PlatformName)\$(ConfigurationName)\$(ProjectName)\"
 			ConfigurationType="1"
-			InheritedPropertySheets=""
+			InheritedPropertySheets="..\common_settings.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -247,11 +225,6 @@
 				StringPooling="true"
 				RuntimeLibrary="0"
 				EnableFunctionLevelLinking="true"
-				PrecompiledHeaderFile="$(IntDir)puttygen.pch"
-				AssemblerListingLocation="$(IntDir)"
-				ObjectFile="$(IntDir)"
-				ProgramDataBaseFileName="$(IntDir)"
-				WarningLevel="3"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -268,11 +241,8 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="comctl32.lib imm32.lib winmm.lib"
-				OutputFile="$(OutDir)\puttygen.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
-				ProgramDatabaseFile="$(OutDir)puttygen.pdb"
-				SubSystem="2"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
 				TargetMachine="17"
@@ -289,7 +259,7 @@
 			<Tool
 				Name="VCBscMakeTool"
 				SuppressStartupBanner="true"
-				OutputFile="$(IntDir)puttygen.bsc"
+				OutputFile="$(IntDir)$(ProjectName).bsc"
 			/>
 			<Tool
 				Name="VCFxCopTool"
@@ -303,8 +273,7 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|x64"
-			OutputDirectory="$(SolutionDir)$(PlatformName)\$(ConfigurationName)\"
-			IntermediateDirectory="$(SolutionDir)$(PlatformName)\$(ConfigurationName)\$(ProjectName)\"
+			InheritedPropertySheets="..\common_settings.vsprops"
 			ConfigurationType="1"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
@@ -339,11 +308,6 @@
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="1"
-				PrecompiledHeaderFile="$(IntDir)puttygen.pch"
-				AssemblerListingLocation="$(IntDir)"
-				ObjectFile="$(IntDir)"
-				ProgramDataBaseFileName="$(IntDir)"
-				WarningLevel="3"
 				SuppressStartupBanner="true"
 				DebugInformationFormat="3"
 			/>
@@ -361,12 +325,9 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="comctl32.lib imm32.lib winmm.lib"
-				OutputFile="$(OutDir)\puttygen.exe"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="$(OutDir)\puttygen.pdb"
-				SubSystem="2"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
 				TargetMachine="17"
@@ -383,7 +344,7 @@
 			<Tool
 				Name="VCBscMakeTool"
 				SuppressStartupBanner="true"
-				OutputFile="$(IntDir)puttygen.bsc"
+				OutputFile="$(IntDir)$(ProjectName).bsc"
 			/>
 			<Tool
 				Name="VCFxCopTool"

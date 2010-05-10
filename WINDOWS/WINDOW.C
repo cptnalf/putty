@@ -350,6 +350,23 @@ int WINAPI WinMain(HINSTANCE inst, HINSTANCE prev, LPSTR cmdline, int show)
 	 osVersion.dwPlatformId != VER_PLATFORM_WIN32_NT))
 	wm_mousewheel = RegisterWindowMessage("MSWHEEL_ROLLMSG");
 
+	if ((osVersion.dwMajorVersion >= 6) && (osVersion.dwMinorVersion >= 1))
+		{
+			/* windows 7 taskbar stuffs. */
+			typedef HRESULT (__stdcall * SetCurProcAppUserModelIDFx_T)(__in const wchar_t*);
+
+			HMODULE shell32 = LoadLibrary("shell32.dll");
+			SetCurProcAppUserModelIDFx_T  setprocID = 
+				(SetCurProcAppUserModelIDFx_T)GetProcAddress(shell32, "SetCurrentProcessExplicitAppUserModelID");
+			 
+			wchar_t* appid = L"SimonTatham.PuTTY";
+			HRESULT hr = setprocID(appid);
+			if (hr != S_OK)
+				{
+					MessageBox(NULL, "failed to set appusermodelid!", "failure", MB_OK |MB_ICONEXCLAMATION);
+				}
+		}
+
     init_help();
 
     init_flashwindow();

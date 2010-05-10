@@ -312,17 +312,17 @@ static int proxy_for_destination (SockAddr addr, char *hostname, int port,
 	if (exclude_list[s] == '*') {
 	    /* wildcard at beginning of entry */
 
-	    if ((addr && strnicmp(hostip + hostip_len - (e - s - 1),
+	    if ((addr && _strnicmp(hostip + hostip_len - (e - s - 1),
 				  exclude_list + s + 1, e - s - 1) == 0) ||
-		strnicmp(hostname + hostname_len - (e - s - 1),
+		_strnicmp(hostname + hostname_len - (e - s - 1),
 			 exclude_list + s + 1, e - s - 1) == 0)
 		return 0; /* IP/hostname range excluded. do not use proxy. */
 
 	} else if (exclude_list[e-1] == '*') {
 	    /* wildcard at end of entry */
 
-	    if ((addr && strnicmp(hostip, exclude_list + s, e - s - 1) == 0) ||
-		strnicmp(hostname, exclude_list + s, e - s - 1) == 0)
+	    if ((addr && _strnicmp(hostip, exclude_list + s, e - s - 1) == 0) ||
+		_strnicmp(hostname, exclude_list + s, e - s - 1) == 0)
 		return 0; /* IP/hostname range excluded. do not use proxy. */
 
 	} else {
@@ -330,9 +330,9 @@ static int proxy_for_destination (SockAddr addr, char *hostname, int port,
 	     * match (ie. a specific IP)
 	     */
 
-	    if (addr && strnicmp(hostip, exclude_list + s, e - s) == 0)
+	    if (addr && _strnicmp(hostip, exclude_list + s, e - s) == 0)
 		return 0; /* IP/hostname excluded. do not use proxy. */
-	    if (strnicmp(hostname, exclude_list + s, e - s) == 0)
+	    if (_strnicmp(hostname, exclude_list + s, e - s) == 0)
 		return 0; /* IP/hostname excluded. do not use proxy. */
 	}
 

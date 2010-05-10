@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioPropertySheet
+	ProjectType="Visual C++"
+	Version="8.00"
+	Name="common_settings"
+	OutputDirectory="$(SolutionDir)$(PlatformName)\$(ConfigurationName)\"
+	IntermediateDirectory="$(SolutionDir)obj\$(PlatformName)\$(ConfigurationName)\$(ProjectName)\"
+	>
+	<Tool
+		Name="VCCLCompilerTool"
+		 PreprocessorDefinitions="_CRT_SECURE_NO_WARNINGS"
+		 PrecompiledHeaderFile="$(IntDir)$(ProjectName).pch"
+		AssemblerListingLocation="$(IntDir)\"
+		ObjectFile="$(IntDir)"
+		ProgramDataBaseFileName="$(IntDir)\vc$(ProjectName).pdb"
+		GenerateXMLDocumentationFiles="false"
+		WarningLevel="3"
+	/>
+	<Tool
+		Name="VCLinkerTool"
+		 OutputFile="$(OutDir)$(ProjectName).exe"
+		 ProgramDatabaseFile="$(OutDir)putty.pdb"
+		 SubSystem="2"
+	/>
+</VisualStudioPropertySheet>

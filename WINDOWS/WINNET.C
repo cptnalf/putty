@@ -1681,7 +1681,7 @@ int net_service_lookup(char *service)
 
 char *get_hostname(void)
 {
-    int len = 128;
+    size_t len = 128;
     char *hostname = NULL;
     do {
 	len *= 2;
